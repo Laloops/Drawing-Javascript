@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando Canvas</title>
+    <script type="text/javascript">
+        function draw() {
+            var canvas = document.getElementById('fundoCanvas');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                var lineargradient = ctx.createLinearGradient(111, 222, 333, 444);
+                lineargradient.addColorStop(0, '#B7DFF9');
+                lineargradient.addColorStop(1, '#068ADF');
+                ctx.fillStyle = lineargradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalAlpha = 0.5;
+                ctx.beginPath();
+                ctx.fillStyle = "green";
+                ctx.arc(380, 333, 5, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(380, 320, 13, 0, 2 * Math.PI);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+
+                ctx.beginPath();
+                ctx.arc(380, 315, 20, 0, Math.PI, true);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+
+                ctx.beginPath();
+                ctx.arc(380, 346, 13, 0, 2 * Math.PI);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+
+                ctx.beginPath();
+                ctx.arc(380, 351, 20, 0, Math.PI, false);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(393, 333, 13, 0, 2 * Math.PI);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(398, 333, 20, 0.5 * Math.PI, 1.5 * Math.PI, true);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(367, 333, 13, 0, 2 * Math.PI);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(362, 333, 20, 0.5 * Math.PI, 1.5 * Math.PI, false);
+                ctx.fillStyle = "purple";
+                ctx.stroke();
+                ctx.fill();
+
+              
+             
+            }
+        }
+    </script>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="draw();">
+    <canvas id="fundoCanvas" width="777" height="666"></canvas>
+</body>
+
+</html>
